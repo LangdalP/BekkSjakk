@@ -1,0 +1,29 @@
+﻿@using BekkSjakk.Helpers
+@model BekkSjakk.Models.ViewModels.SjakkPartierViewModel
+
+<h1>Bekk Sjakk</h1>
+
+<h2>Spillere</h2>
+<p>TODO: Her vil det vise en ranking av alle spillere</p>
+
+<h2>Partier</h2>
+<table class="partier">
+    <thead>
+    <tr>
+        <th>Når</th>
+        <th>Hvit</th>
+        <th>Svart</th>
+        <th>Resultat</th>
+    </tr> 
+    </thead>
+    @foreach (var parti in Model.Partier)
+    {
+        <tr>
+            <td>@DateTimeOffsetDisplayHelper.DateTimeOffsetToRelativeString(parti.Dato)</td>
+            <td>@parti.SpillerHvit</td>
+            <td>@parti.SpillerSvart</td>
+            <td>@parti.Resultat.ToString()</td>
+            <td><a class="lichessLink" target="_blank" href="https://lichess.org/paste?pgn=@HttpUtility.UrlEncode(parti.Pgn)">Til analysebrett</a></td>
+        </tr>
+    }
+</table>

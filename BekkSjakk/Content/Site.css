@@ -1,0 +1,23 @@
+﻿
+html, body {
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+body {
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(194, 194, 194);
+    background-color: rgb(26, 26, 26);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    color: #fff;
+}
+
+#container {
+    max-width: 1000px;
+    margin: 0 auto;
+}

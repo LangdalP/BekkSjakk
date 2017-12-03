@@ -1,0 +1,20 @@
+﻿
+.partier {
+    color: #fff;
+}
+.partier thead {
+    font-weight: bold;
+}
+
+.partier th,
+.partier td {
+    padding: 2px 50px 2px 0px;
+}
+
+.partier td {
+    text-align: left;
+}
+
+.partier .lichessLink {
+    color: #fff;
+}
