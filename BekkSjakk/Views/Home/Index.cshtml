@@ -1,10 +1,24 @@
 ﻿@using BekkSjakk.Helpers
-@model BekkSjakk.Models.ViewModels.SjakkPartierViewModel
+@model BekkSjakk.Models.ViewModels.IndexViewModel
 
 <h1>Bekk Sjakk</h1>
 
 <h2>Spillere</h2>
-<p>TODO: Her vil det vise en ranking av alle spillere</p>
+<table class="bekkere">
+    <thead>
+    <tr>
+        <th>Navn</th>
+        <th>Elo</th>
+    </tr> 
+    </thead>
+    @foreach (var bekker in Model.Bekkere)
+    {
+        <tr>
+            <td>@bekker.Navn</td>
+            <td>@bekker.Elo</td>
+        </tr>
+    }
+</table>
 
 <h2>Partier</h2>
 <table class="partier">

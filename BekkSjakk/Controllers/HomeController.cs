@@ -13,8 +13,14 @@ namespace BekkSjakk.Controllers
     {
         public async Task<ActionResult> Index()
         {
+            // TODO 1: Liste opp antal parti spelt
             var partier = await new SjakkPartiService().HentAllePartiAsync();
-            var vm = new SjakkPartierViewModel {Partier = partier};
+            var bekkere = await new BekkerService().HentAlleBekkereAsync();
+            var vm = new IndexViewModel
+            {
+                Bekkere = bekkere.OrderByDescending(b => b.Elo).ToList(),
+                Partier = partier.OrderByDescending(p => p.Dato).ToList()
+            };
             return View(vm);
         }
     }

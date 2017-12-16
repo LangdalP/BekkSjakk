@@ -152,6 +152,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Data\BekkerService.cs" />
+    <Compile Include="Data\DataHelpers.cs" />
     <Compile Include="Data\DataObjects\BekkerDataObject.cs" />
     <Compile Include="Data\DataObjects\SjakkPartiDataObject.cs" />
     <Compile Include="Data\SjakkPartiService.cs" />
@@ -159,9 +161,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DateTimeOffsetDisplayHelper.cs" />
+    <Compile Include="Models\Bekker.cs" />
     <Compile Include="Models\PartiResultat.cs" />
     <Compile Include="Models\SjakkParti.cs" />
-    <Compile Include="Models\ViewModels\SjakkPartierViewModel.cs" />
+    <Compile Include="Models\ViewModels\IndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

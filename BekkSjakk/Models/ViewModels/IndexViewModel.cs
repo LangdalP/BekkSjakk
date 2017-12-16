@@ -5,8 +5,9 @@ using System.Web;
 
 namespace BekkSjakk.Models.ViewModels
 {
-    public class SjakkPartierViewModel
+    public class IndexViewModel
     {
+        public List<Bekker> Bekkere { get; set; }
         public List<SjakkParti> Partier { get; set; }
     }
 }

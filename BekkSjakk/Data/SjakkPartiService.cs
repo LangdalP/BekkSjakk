@@ -20,18 +20,8 @@ namespace BekkSjakk.Data
 
         public async Task<List<SjakkParti>> HentAllePartiAsync()
         {
-            HttpClient client = new HttpClient();
-            var apiKey = ConfigurationManager.AppSettings["ApiKey"];
-            var fullUrl = $"{GamesEndpoint}?code={apiKey}";
-            using (HttpResponseMessage response = await client.GetAsync(fullUrl))
-            {
-                using (HttpContent content = response.Content)
-                {
-                    string result = await content.ReadAsStringAsync();
-                    var partierDataObject = JsonConvert.DeserializeObject<List<SjakkPartiDataObject>>(result);
-                    return partierDataObject.Select(p => new SjakkParti(p)).ToList();
-                }
-            }
+            var partiDataObjects = await DataHelpers.HentObjekter<SjakkPartiDataObject>(GamesEndpoint);
+            return partiDataObjects.Select(p => new SjakkParti(p)).ToList();
         }
 
     }
